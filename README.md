@@ -1,24 +1,23 @@
 # sentence-analysis
-Algorithm SentenceAnalysis(sentence)
-    Input: sentence (a string representing the sentence ending with a period)
-    Output: length (an integer representing the length of the sentence)
-            wordCount (an integer representing the number of words in the sentence)
-            vowelCount (an integer representing the number of vowels in the sentence)
-
-    length := 0
-    wordCount := 0
-    vowelCount := 0
-
-    For each character in sentence:
-        If character ≠ ' ' AND character ≠ '.':
-            length := length + 1
-
-        If character = ' ':
-            wordCount := wordCount + 1
-
-        If LowerCase(character) ∈ {'a', 'e', 'i', 'o', 'u'}:
-            vowelCount := vowelCount + 1
-
-    wordCount := wordCount + 1  // accounting for the last word
-
-    Output length, wordCount, and vowelCount
+ALGORITHM algorithm_name
+VAR
+    c : CHAR
+    nbrChar, nbrV, nbrW : INTEGER
+BEGIN
+    nbrChar := 0
+    nbrV := 0
+    nbrW := 0
+    REPEAT
+        Read(c)
+        nbrChar := nbrChar+1
+        IF (c = 'a' OR c = 'e' OR c='o' OR c = 'u' OR c = 'i' OR c = 'y') THEN
+            nbrV := nbrV+1
+        END_IF
+        IF (c = ' ' OR c = '.') THEN
+           nbrW := nbrW+1
+        END_IF
+    UNTIL (c='.')
+    Write("number of characters = ", nbrChar)
+    Write("number of vowels = ", nbrV)
+    Write("number of words = ", nbrw)
+END
